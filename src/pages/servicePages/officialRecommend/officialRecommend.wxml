@@ -1,0 +1,68 @@
+<!--pages/servicePages//officialRecommend/officialRecommend.wxml-->
+<view class="fixed-nav">
+  <van-dropdown-menu>
+  <block wx:for="{{navTit}}" wx:key="id">
+    <van-dropdown-item id="{{item.type == 'areaList'? 'item_area' : 'item_' + index}}" title="{{item.title}}">
+      <block wx:if="{{item.type == 'areaList'}}">
+        <van-area area-list="{{ item.option }}" id="area" columns-num="{{ 3 }}" bind:confirm="selectAreaHandle"
+          bind:cancel="cancleAreaHandle" cancel-button-text="重置" />
+      </block>
+      <block wx:else>
+        <block wx:if="{{item.type == 'treeSelect'}}">
+          <scroll-view class="scroll-600h" scroll-y="true">
+            <van-tree-select items="{{ item.option }}" main-active-index="{{ mainActiveIndex }}"
+              active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem"
+              data-navIndex="{{index}}" />
+          </scroll-view>
+        </block>
+        <block wx:elif="{{item.type == 'checkBox'}}">
+          <scroll-view class="scroll-600h" scroll-y="true">
+            <van-checkbox-group bind:change="checkboxChange" data-navIndex="{{index}}" value="{{ item.result }}">
+              <van-cell-group>
+                <van-cell wx:for="{{item.option}}" wx:for-item="yitem" wx:key="idx" title="{{ yitem.text }}"
+                  value-class="value-class" clickable data-index="{{ index }}" bind:click="checkboxToggle">
+                  <van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ yitem.text }}" shape="square"
+                    checked-color="#e04f4d" />
+                </van-cell>
+              </van-cell-group>
+            </van-checkbox-group>
+          </scroll-view>
+        </block>
+        <view class="btn-box">
+          <van-button type="default" class="flex-1" block data-item="{{index}}" bind:click="cancelfirmBtn">重置
+          </van-button>
+          <van-button type="primary" class="flex-1" block color="#e04f4d" data-item="{{index}}" bind:click="confirmBtn">
+            确认</van-button>
+        </view>
+      </block>
+    </van-dropdown-item>
+  </block>
+</van-dropdown-menu>
+</view>
+
+<view class="wrap-p-box mt100 fs-26 bg-white {{windowFixed?'fixed-position' : ''}}">
+  <view class="d-flex jc-between ai-center">
+    <view class="list-item">
+      <view class="fs-30">广州某公司电脑项目融资100万</view>
+      <view class="text-light-gray">项目所属行业：互联网</view>
+      <view class="text-light-gray">融资方式：项目融资</view>
+    </view>
+    <van-button plain type="info" size="small" custom-class="border-r-10"  bind:click="buttonHandle">申请</van-button>
+  </view>
+  <view class="d-flex jc-between ai-center">
+    <view class="rz-item">
+      <view class="fs-30">广州某公司电脑项目融资100万</view>
+      <view class="text-light-gray">项目所属行业：互联网</view>
+      <view class="text-light-gray">融资方式：项目融资</view>
+    </view>
+    <van-button plain type="info" size="small" custom-class="border-r-10"  bind:click="buttonHandle">申请</van-button>
+  </view>
+  <view class="d-flex jc-between ai-center">
+    <view class="list-item">
+      <view class="fs-30">广州某公司电脑项目融资100万</view>
+      <view class="text-light-gray">项目所属行业：互联网</view>
+      <view class="text-light-gray">融资方式：项目融资</view>
+    </view>
+    <van-button plain type="info" size="small" custom-class="border-r-10"  bind:click="buttonHandle">申请</van-button>
+  </view>
+</view>

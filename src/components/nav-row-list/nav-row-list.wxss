@@ -1,0 +1,12 @@
+/* components/nav-row-list/nav-row-list.wxss */
+
+.van-grid-item__content::after{
+    border: none!important;
+  }
+  .van-grid-item__content{
+    padding: 16px 8px!important;
+  }
+  .van-grid-item{
+    text-align: center;
+  }
+

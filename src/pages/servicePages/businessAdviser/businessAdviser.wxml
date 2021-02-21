@@ -1,0 +1,42 @@
+<!--pages/servicePages//businessAdviser/businessAdviser.wxml-->
+<view class="sticky-nav">
+  <van-dropdown-menu>
+    <block wx:for="{{navTit}}" wx:key="id">
+      <van-dropdown-item id="{{item.type == 'areaList'? 'item_area' : 'item_' + index}}" title="{{item.title}}" bind:open="openHandle" bind:close="closeHandle">
+        <block wx:if="{{item.type == 'areaList'}}">
+          <van-area area-list="{{ item.option }}" id="area" columns-num="{{ 3 }}" bind:confirm="selectAreaHandle"
+            bind:cancel="cancleAreaHandle" cancel-button-text="重置" />
+        </block>
+      </van-dropdown-item>
+    </block>
+  </van-dropdown-menu>
+</view>
+
+<view class="wrap-mp20-box {{windowFixed?'fixed-position' : ''}}">
+  <block wx:for="{{itemList}}" wx:key="id">
+    <view class="bg-white mb40  p30">
+      <view class="d-flex jc-between ai-center border-2-bottom">
+        <view class="flex-1">
+          <view class="fs-36 font-bold mb20">{{item.title}}</view>
+          <view class="fs-24 d-flex mb20">
+            <van-icon name="location-o" />
+            <text class="ml20">{{item.address}}</text>
+          </view>
+        </view>
+        <van-button plain type="info" size="small" custom-class="border-r-10" bind:click="buttonHandle">咨询</van-button>
+      </view>
+
+      <view class="d-flex ai-center" style="padding-top:20rpx">
+        <image src="{{item.pic}}" class="pic-90" />
+        <view class="flex-1 ml20">
+          <view class="fs-30 text-light-gray">{{item.company}}</view>
+          <block wx:for="{{item.tag}}" wx:for-item="yitem" wx:key="idx">
+            <van-button plain type="info" size="mini" color="#e25453" custom-class="text-light-red mr10 mt10">{{yitem}}
+            </van-button>
+            <!-- <view class="tag-btn fs-24 text-light-red ">{{yitem}}</view> -->
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

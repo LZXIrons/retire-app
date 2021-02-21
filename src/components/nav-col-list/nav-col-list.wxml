@@ -1,0 +1,15 @@
+<!--components/nav-col-list/nav-col-list.wxml-->
+<view>
+    <block wx:for="{{navList}}" wx:for-item="item" wx:key="id">
+        <view class="wrap-p-box">
+            <view class="nav-col-list border-2-bottom" bind:tap="toNav" data-url="{{item.url}}" data-text="{{item.text}}" data-isBindevent="{{item.isBindevent}}">
+                <image src="{{item.pic}}" class="pic-90" />
+                <view class="flex-1 ml40 re-position">
+                    <view class="fs-30 font-bold">{{item.text}}</view>
+                    <view class="fs-24 text-light-gray mt20">{{item.desc}}</view>
+                    <view class="dot" wx:if="{{item.dot}}"></view>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

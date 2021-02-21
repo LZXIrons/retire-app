@@ -1,0 +1,4 @@
+<!--pages/servicePages//projectSupport/projectSupport.wxml-->
+<view class="wrap-mp-box">
+        <nav-row-list columnNum="4" navList="{{navList_1}}"></nav-row-list>
+    </view>

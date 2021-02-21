@@ -1,0 +1,13 @@
+/* pages/subPages//smartMatch/smartMatch.wxss */
+page{
+  background: #ffffff;
+}
+.choice-box{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  padding:0 20rpx;
+  color: #cccccc;
+  border-radius: 10rpx;
+  border:2rpx solid #cccccc
+}

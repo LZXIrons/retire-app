@@ -1,0 +1,10 @@
+/* components/nav-col-list/nav-col-list.wxss */
+.dot{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  background: #e25453;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+}

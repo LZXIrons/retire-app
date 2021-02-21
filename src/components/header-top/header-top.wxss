@@ -1,0 +1,21 @@
+/* components/header-top/header-top.wxss */
+
+.header-top{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+  /* position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%; */
+}
+.icon-sousuo{
+  position: absolute;
+  top: 6rpx;
+  left: 30rpx;
+}

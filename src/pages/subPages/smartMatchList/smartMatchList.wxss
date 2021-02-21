@@ -1,0 +1,11 @@
+/* pages/subPages//smartMatchList/smartMatchList.wxss */
+.van-ellipsis{
+  text-overflow: inherit!important;
+}
+.van-cell__value {
+  text-align: right!important;
+}
+.value-class {
+  flex: none !important;
+}
+

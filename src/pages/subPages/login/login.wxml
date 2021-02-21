@@ -1,0 +1,24 @@
+<!--pages/subPages//login/login.wxml-->
+<view class="forget-password">
+		<form class=" form-box" bind:submit="submitForm">
+			<view class="item tel bg-white">
+				 <input type="text"  name="phoneNum" maxlength="11" placeholder="请输入手机" />
+			</view>
+			
+			<view class="item bg-white" wx:if="{{!codeLogin}}">
+				<input type="text" name="password"  placeholder="请输入密码" password="{{!isShow}}"/>
+				<view>
+					<!-- <uni-icons :type="isShow?'eye' : 'eye-slash'" size="16" @click="isShow=!isShow" color="#ccc"></uni-icons> -->
+				</view>
+			</view>
+			<view class="item bg-white" wx:else>
+				<input type="text" class="code" placeholder="请输入验证码" name="code"/>
+				<button class="btn-code" class="{{disabled?'disabled':''}}" size="18" bind:tap="getVerifyCode" disabled="{{disabled}}">{{codename}}</button>
+			</view>
+			<!-- <view class="item login-box">
+				<navigator class="link" @click="codeLogin = !codeLogin">{{codeLogin?'密码':'验证码'}}登录</navigator>
+				<navigator class="link" url="h5_user_regist">立即注册</navigator>
+			</view> -->
+			<button class="btn bg-red"  form-type="submit">登录</button>
+		</form>
+	</view>

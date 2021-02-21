@@ -1,0 +1,34 @@
+<!--pages/my/my.wxml-->
+<view class="service-page">
+    <view class="header-box bg-red">
+        <header-top></header-top>
+    </view>
+    <view class="wrap-p-box bg-red user-box">
+        <view class="user-info">
+            <image src="{{userInfo.pic}}" class="pic-120 ml20 user-pic" />
+            <view class="flex-1 ml40">
+                <view class="fs-30 font-bold">{{userInfo.name}}</view>
+                <view class="fs-24 mt20">{{userInfo.desc}}</view>
+            </view>
+        </view>
+        <view class="user-address">
+            <view class="fs-32">{{userInfo.service}}</view>
+            <view class="fs-28 text-light-gray">
+                <van-icon name="home-o" custom-style="margin-right:10rpx;" />地址：{{userInfo.address}}</view>
+            <view class="fs-28 text-light-gray">
+                <van-icon name="phone-o" custom-style="margin-right:10rpx" />电话：{{userInfo.tel}}</view>
+        </view>
+    </view>
+    <view class="wrap-mp-box">
+        <nav-row-list columnNum="3" navList="{{navList_1}}"></nav-row-list>
+    </view>
+    <view class="wrap-mp-box">
+        <view class="cell-wrap">
+            <block wx:for="{{navList_2}}" wx:key="id">
+                <van-cell title="{{item.text}}" icon="{{item.pic}}" is-link bind:click="clickHandle"></van-cell>
+            </block>
+        </view>
+    </view>
+    <!-- 底部占位符 -->
+    <view style="height:100rpx"></view>
+</view>

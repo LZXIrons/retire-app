@@ -1,0 +1,7 @@
+/* pages/servicePages//seekWork/seekWork.wxss */
+.van-cell__value {
+  text-align: right!important;
+}
+.value-class {
+  flex: none !important;
+}

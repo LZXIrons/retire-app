@@ -1,0 +1,11 @@
+<!--components/header-top/header-top.wxml-->
+<view class="header-top" style="height:{{44 + statusBarHeight}}px">
+  <view style="height:{{statusBarHeight}}px"></view>
+  <view class="fs-36 wrap-p-box w-100 re-position text-center">
+    <view class="iconfont icon-sousuo fs-36" bind:tap="toSearch"></view>
+    <view class="fs-36">
+      <text class="iconfont icon-kefu fs-36" wx:if="{{route == '/pages/index/index'}}"></text>
+      <text class="ml20">{{title}}</text>
+    </view>
+  </view>
+</view>

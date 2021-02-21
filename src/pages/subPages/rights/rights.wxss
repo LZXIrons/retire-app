@@ -1,0 +1,10 @@
+/* pages/subPages//rights/rights.wxss */
+page{
+  background-color: #ffffff;
+}
+.dot{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #e25453;
+}

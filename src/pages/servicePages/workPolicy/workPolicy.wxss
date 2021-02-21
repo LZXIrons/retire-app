@@ -1,0 +1,12 @@
+/* pages/servicePages//workPolicy/workPolicy.wxss */
+.van-ellipsis{
+  text-overflow: inherit!important;
+}
+.van-cell__value {
+  text-align: right!important;
+}
+.value-class {
+  flex: none !important;
+}
+
+

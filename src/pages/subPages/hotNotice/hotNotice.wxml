@@ -1,0 +1,15 @@
+<!--pages/subPages//hotNotice/hotNotice.wxml-->
+<view class="wrap-mp-box bg-white">
+  <van-empty wx:if="{{isEmpty}}" image="/static/images/empty.png" description="没有数据了" />
+  <view wx:else>
+    <block wx:for="{{articleList}}" wx:for-item="yitem" wx:for-index="index" wx:key="idx">
+      <view class="list-180h-item border-2-bottom pt46" data-yitem="{{yitem}}" catch:tap="toDetail">
+        <view class="fs-26 line-1-hide"> {{yitem.title}}</view>
+        <view class="mt20 fs-24 text-light-gray d-flex jc-between">
+          <view>来源：{{yitem.originate}}</view>
+          <view>时间：{{yitem.articleTime}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

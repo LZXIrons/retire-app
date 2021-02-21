@@ -1,0 +1,19 @@
+<!--pages/subPages//articleDetail/articleDetail.wxml-->
+<view class="wrap-mp-box">
+    <view class="fs-32 font-bold">
+        {{detail.title}}
+    </view>
+    <view class="mt20 mb20 text-gray fs-24 d-flex ai-center">
+        <view class="mr40">
+        来源：{{detail.originate}}
+        </view>
+        <view>
+        时间：{{detail.articleTime}}
+        </view>
+    </view>
+    <view class="wxParseView">
+      <import src="../../../utils/wxParse/wxParse.wxml"/>
+      <template is="wxParse" data="{{wxParseData:articleContent.nodes}}"/>
+    </view>
+</view>
+  

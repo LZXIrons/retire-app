@@ -1,0 +1,73 @@
+/**index.wxss**/
+
+.bg-pic{
+  position: absolute;
+  top: 0rpx;
+  width: 100%;
+  z-index: 1;
+}
+.swiper-banner{
+  margin-top: 30rpx;
+  position: relative;
+  z-index: 10;
+}
+.swiper-banner-item{
+
+  text-align: center;
+  /* margin: 0 auto;
+  overflow: hidden; */
+}
+.swiper-image{
+  width: 690rpx;
+  height: 300rpx;
+}
+.swiper-notice{
+  position: relative;
+  
+}
+.notice{
+  width: 690rpx;
+  height: 110rpx;
+  color: #e9ca9f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 26rpx;
+}
+.notice-bg-pic{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 690rpx;
+  height: 110rpx;
+}
+
+
+.van-tab{
+  width: 180rpx;
+}
+.van-tab{
+  font-size: 30rpx!important;
+}
+
+.van-tabs__scroll {
+  background: transparent!important;
+}
+.news-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  /* background: #fff;
+  padding: 20rpx; */
+}
+.van-tabs {
+  height: 1200rpx !important;
+}
+.r-icon{
+  position: absolute!important;
+  right: -22rpx;
+  bottom: 70rpx;
+  color: #e04f4d;
+}

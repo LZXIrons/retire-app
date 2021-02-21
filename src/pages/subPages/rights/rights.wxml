@@ -1,0 +1,4 @@
+<!-- pages/subPages//rights/rights.wxml -->
+<nav-col-list bind:getNavData="getNavDataList" navList="{{navList}}">
+  <view class="dot" slot="dot">1</view>
+</nav-col-list>

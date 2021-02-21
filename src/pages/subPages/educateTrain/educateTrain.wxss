@@ -1,0 +1,7 @@
+/* pages/subPages//educateTrain/educateTrain.wxss */
+.nav-col-list .flex-1{
+  line-height: 36rpx;
+}
+.wrap-mp-box{
+  margin: 32rpx 0;
+}

@@ -1,0 +1,88 @@
+<!-- index.wxml -->
+
+<view class="index-page">
+  <view class="header-box">
+    <header-top></header-top>
+    <image class="bg-pic" mode="widthFix" src="/static/images/001-index_01.png"></image>
+  </view>
+  <swiper class="swiper-banner" indicator-dots="{{true}}" indicator-active-color="#ffffff" autoplay="{{true}}"
+    interval="{{5000}}" duration="{{500}}" circular="{{true}}"  bind:tap="buttonHandle">
+    <block wx:for="{{banners}}" wx:for-item="item" wx:key="id">
+      <swiper-item class="swiper-banner-item">
+        <image class="swiper-image  border-r-12" src="{{item.pic}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+  
+  <view class="wrap-mp-box">
+    <view class="d-flex ai-center mb28">
+      <view class="tag-width bg-red-light mr20"></view>
+      <view class="text-gray fs-36 font-bold">优选服务</view>
+    </view>
+    <nav-row-list navList="{{navList}}" bind:getNavData="getNavDataList"></nav-row-list>
+  </view>
+
+  <view class="wrap-mp-box">
+    <view class="d-flex ai-center mb28">
+      <view class="tag-width bg-red-light mr20"></view>
+      <view class="text-gray fs-36 font-bold">热门公告</view>
+    </view>
+    <view class="swiper-notice fs-24">
+      <view class="notice">
+        <image src="/static/images/41-2x.png" style="width:36rpx;height:36rpx" />
+        <swiper autoplay="{{true}}" interval="{{1000}}" duration="{{500}}" circular="{{true}}"
+          style="width:480rpx;height:38rpx">
+          <block wx:for="{{hotNotices}}" wx:for-item="item" wx:key="id">
+            <swiper-item>
+              <view class="flex-1 ml20 line-1-hide" style="width:450rpx;height:38rpx">{{item.title}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <view bind:tap="toHotNotice">
+          <text class="mr10">查看更多</text>
+          <image src="/static/images/42-2x.png" style="width:12rpx;height:18rpx" />
+        </view>
+      </view>
+      <image class="notice-bg-pic border-r-10" src="/static/images/notice-bg.jpg" />
+    </view>
+  </view>
+
+  <view class="fs-30 text-light-gray wrap-p-box">
+    <van-tabs active="{{ active }}" bind:change="onChange" line-width="80" bind:change="changeNav">
+      <block wx:for="{{newsTit}}" wx:for-item="item" wx:key="id">
+        <van-tab title="{{item.title}}" custom-class="mt40">
+          <van-row gutter="20" custom-class="ml0" bind:tap="areaNavHandle">
+            <van-col span="8">省:{{ areaArray[0] }}</van-col>
+            <van-col span="8">市:{{ areaArray[1] }}</van-col>
+            <van-col span="8">区:{{ areaArray[2] }}</van-col>
+           
+          </van-row>
+          <van-empty wx:if="{{isEmpty}}" image="/static/images/empty.png" description="没有数据了" />
+          <view class="bg-white wrap-mp20-box" wx:else>
+             <!-- 骨架屏 -->
+            <block wx:for="{{6}}" wx:key="index">
+              <view class="list-180h-item news-list border-2-bottom mb20" hidden="{{isRender}}">
+                <van-skeleton row="2" />
+              </view>
+            </block>
+            <block wx:for="{{articleList}}" wx:for-item="yitem" wx:for-index="index" wx:key="idx">
+              <view class="list-180h-item news-list border-2-bottom" data-yitem="{{yitem}}" catch:tap="toDetail">
+                <view class="fs-26 line-2-hide text-gray"> {{yitem.title}}</view>
+                <view class="mt20 fs-24 text-light-gray d-flex">
+                  <view>来源：{{yitem.originate}}</view>
+                  <view class="ml40">时间：{{yitem.createTime}}</view>
+                </view>
+                <van-icon name="arrow" size="18px" custom-class="r-icon" />
+              </view>
+            </block>
+          </view>
+        </van-tab>
+      </block>
+    </van-tabs>
+  </view>
+</view>
+<van-popup show="{{ showPopup }}" position="bottom" bind:close="closePopup">
+  <van-area area-list="{{ areaList }}" id="area" columns-num="{{ 3 }}" value="440000" title="区域选择" cancel-button-text="重置"
+    bind:confirm="selectAreaHandle" bind:cancel="cancleAreaHandle" />
+
+</van-popup>

@@ -1,0 +1,7 @@
+/* pages/servicePages//groupRecruit/groupRecruit.wxss */
+.van-cell__value {
+  text-align: right!important;
+}
+.value-class {
+  flex: none !important;
+}

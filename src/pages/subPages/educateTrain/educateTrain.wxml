@@ -1,0 +1,58 @@
+<!--pages/subPages//educateTrain/educateTrain.wxml-->
+<view class="d-flex jc-between wrap-mp-box" bind:tap="buttonHandle">
+  <view class="d-flex ai-center">
+    <view class="tag-width bg-blue-light mr20"></view>
+    <view class="text-gray fs-36 font-bold">我的课程</view>
+  </view>
+  <view class="d-flex ai-center">
+    <view class="fs-24 text-gray">更多</view>
+    <van-icon name="arrow" custom-class="text-red" />
+  </view>
+</view>
+<view class="bg-white" bind:tap="buttonHandle">
+  <block wx:for="{{articleList1}}" wx:for-item="item" wx:key="id">
+    <view class="nav-col-list wrap-p-box">
+      <image src="{{item.pic}}" class="pic-90" />
+      <view class="flex-1 ml40">
+        <view class="fs-26">{{item.text}}</view>
+        <view class="fs-24 text-light-gray">￥{{item.price}}</view>
+        <view class="fs-24 text-light-gray">{{item.source}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="d-flex jc-between wrap-mp-box" bind:tap="buttonHandle">
+  <view class="d-flex ai-center">
+    <view class="tag-width bg-blue-light mr20"></view>
+    <view class="text-gray fs-36 font-bold">推荐课程</view>
+  </view>
+  <view class="d-flex ai-center">
+    <view class="fs-24 text-gray">更多</view>
+    <van-icon name="arrow" custom-class="text-red" />
+  </view>
+</view>
+<view class="bg-white" bind:tap="buttonHandle">
+  <block wx:for="{{articleList2}}" wx:for-item="item" wx:key="id">
+    <view class="nav-col-list wrap-p-box">
+      <image src="{{item.pic}}" class="pic-90" />
+      <view class="flex-1 ml40">
+        <view class="fs-26">{{item.text}}</view>
+        <view class="fs-24 text-light-gray">￥{{item.price}}</view>
+        <view class="fs-24 text-light-gray">{{item.source}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class="d-flex jc-between wrap-mp-box" bind:tap="buttonHandle">
+  <view class="d-flex ai-center">
+    <view class="tag-width bg-blue-light mr20"></view>
+    <view class="text-gray fs-36 font-bold">培训机构</view>
+  </view>
+  <view class="d-flex ai-center">
+    <view class="fs-24 text-gray">更多</view>
+    <van-icon name="arrow" custom-class="text-red" />
+  </view>
+</view>
+<view class="bg-white">
+  <nav-row-list columnNum="3" navList="{{articleList3}}"></nav-row-list>
+</view>

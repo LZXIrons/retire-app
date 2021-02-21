@@ -1,0 +1,4 @@
+/* pages/subPages//articleDetail/articleDetail.wxss */
+page{
+    background-color: #ffffff;
+}

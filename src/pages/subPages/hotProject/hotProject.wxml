@@ -1,0 +1,32 @@
+<!--pages/subPages//hotProject/hotProject.wxml-->
+<search-part></search-part>
+<view class="wrap-mp20-box">
+  <block wx:for="{{itemList}}" wx:key="id">
+    <view class="bg-white mb40  p30">
+      <view class="d-flex jc-between mb20 ai-center">
+        <view class="fs-36 font-bold">{{item.title}}</view>
+        <view class="fs-24 text-gray">{{item.time}}</view>
+      </view>
+      <view class="d-flex jc-between ai-center border-2-bottom">
+        <view>
+          <view class="fs-24 d-flex mb20">
+            <view> <van-icon name="location-o" />{{item.address}}</view>
+            <view class="ml40 iconfont icon-xuelishuiping fs-24" >{{item.qualifications}}</view>
+          </view>
+          <view class="mb20 text-red">{{item.price}}</view>
+        </view>
+        <van-button plain type="info" size="small" custom-class="border-r-10"  bind:click="buttonHandle">申请</van-button>
+      </view>
+      <view class="d-flex ai-center"  style="padding-top:20rpx">
+        <image src="{{item.pic}}" class="pic-90" />
+        <view class="flex-1 ml20">
+          <view class="fs-30 text-light-gray">{{item.company}}</view>
+          <block wx:for="{{item.tag}}" wx:for-item="yitem" wx:key="idx">
+            <van-button plain type="info" size="mini" color="#e25453" custom-class="border-r-10 text-light-red mr10 mt10">{{yitem}}</van-button>
+            <!-- <view class="tag-btn fs-24 text-light-red ">{{yitem}}</view> -->
+          </block>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

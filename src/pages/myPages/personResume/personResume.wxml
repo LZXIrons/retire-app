@@ -1,0 +1,62 @@
+<!--pages/myPages//personResume/personResume.wxml-->
+<view class="wrap-mp-box">
+  <view class="d-flex ai-center mb28">
+    <view class="tag-width bg-red-light mr20"></view>
+    <view class="text-gray fs-32 font-bold">基本信息</view>
+  </view>
+  <view class="re-position">
+    <view>
+      <text>肖伟</text>
+      <text class="mr10 ml10">|</text>
+       <text>男</text>
+       <text class="mr10 ml10">|</text>
+      <text>26岁</text>
+      <text class="mr10 ml10">|</text>
+      <text>1994.8.8</text>
+    </view>
+    <view>身高：183cm</view>
+    <view>联系方式：18625889873</view>
+    <view>籍贯：湖南邵阳</view>
+    <view>民族：汉族</view>
+    <view>政治面貌：中国党员</view>
+    <view>学历：本科</view>
+    <view>驾驶执照：部队执照B</view>
+    <view>家庭住址：湖南省邵阳市XXXXXXXXXXXXX</view>
+    <view>自我评价：有敬业精神，爱学习、敬业、真诚、心态冷静。本人退伍军人，身体健康、有上进心、带人真诚，无不良嗜好，有XXX相关工作经验。</view>
+    <image class="user-head" src="/static/images/user-head.jpg"></image>
+  </view>
+</view>
+<view class="wrap-mp-box">
+  <view class="d-flex ai-center mb28">
+    <view class="tag-width bg-red-light mr20"></view>
+    <view class="text-gray fs-32 font-bold">家庭成员</view>
+  </view>
+</view>
+<view class="wrap-mp-box">
+  <view class="d-flex ai-center mb28">
+    <view class="tag-width bg-red-light mr20"></view>
+    <view class="text-gray fs-32 font-bold">教育背景</view>
+  </view>
+  <view>
+    <view>
+      <text class="mr40">1999.9-2005.7</text>
+      <text>太子庙小学</text>
+    </view>
+    <view>
+      <text class="mr40">1999.9-2005.7</text>
+      <text>太子庙小学</text>
+    </view>
+  </view>
+</view>
+<view class="wrap-mp-box">
+  <view class="d-flex ai-center mb28">
+    <view class="tag-width bg-red-light mr20"></view>
+    <view class="text-gray fs-32 font-bold">个人经历</view>
+  </view>
+</view>
+<view class="wrap-mp-box">
+  <view class="d-flex ai-center mb28">
+    <view class="tag-width bg-red-light mr20"></view>
+    <view class="text-gray fs-32 font-bold">证书信息</view>
+  </view>
+</view>

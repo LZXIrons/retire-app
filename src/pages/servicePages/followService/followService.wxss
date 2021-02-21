@@ -1,0 +1,5 @@
+/* pages/servicePages//followService/followService.wxss */
+.van-dropdown-menu__item{
+  justify-content: flex-start!important;
+  padding-left: 40rpx;
+}

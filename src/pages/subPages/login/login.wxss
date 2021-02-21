@@ -1,0 +1,68 @@
+/* pages/subPages//login/login.wxss */
+.set-password{
+  display: flex;
+  justify-content: flex-end;
+  color: #C0C0C0;
+  margin: 20rpx;
+  text-align: right;
+}
+.form-box .item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #f2f2f2;
+}
+.form-box input{
+  width: 78%;
+}
+.form-box .tel{
+  justify-content: flex-start;
+}
+.form-box  text{
+  margin-right: 20rpx;
+}
+.bg-white{
+  padding: 30rpx 25rpx;
+  height: 120rpx;
+  border-bottom: 2rpx solid #eee;
+  line-height: 100rpx;
+}
+.btn{
+  width: 687rpx;
+  height: 100rpx;
+  background-color: #cdcdcd;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 100rpx;
+  color: #fff;
+  margin: 120rpx auto 0;
+}
+.btn.active{
+  background-color: #CDB288;
+}
+.login-box{
+  display: flex;
+  justify-content: flex-end;
+  padding:15rpx 20rpx;
+}
+.link{
+  margin-left: 30rpx;
+}
+.btn-code{
+  width: 184rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  background-color: #000000;
+  color: #fff;
+
+}
+.btn-code.disabled{
+  background-color: #ccc;
+}
+.form-box{
+  display: block;
+
+}

@@ -1,0 +1,26 @@
+<!-- pages/subPages//search/search.wxml -->
+<search-part></search-part>
+<view class="wrap-p-box fs-30 text-light-gray" style="margin:40rpx 0">
+    <view class="mb10 d-flex jc-between">
+        <text>历史</text>
+        <text class="iconfont icon-shanchu"></text>
+    </view>
+    <view class="line-1h w-100"></view>
+     <view class="mb20 mt20">
+         暂无历史搜索记录
+     </view>
+    <view class="mb10 ">
+        热门
+    </view>
+    <view class="line-1h"></view>
+     <view class="mb24 mt24">
+         <block wx:for="{{hotWordList}}" wx:for-item="item" wx:key="id">
+             <view class="hot-word-item">
+                 {{item.text}}
+             </view>
+               
+         </block>
+           
+     </view>      
+</view>
+  

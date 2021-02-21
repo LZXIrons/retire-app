@@ -1,0 +1,4 @@
+<!--pages/entry/entry.wxml-->
+<view class="entry-page">
+  <image src="/static/images/entry.jpg" class="w-100 h-100"></image>
+</view>

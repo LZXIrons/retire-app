@@ -1,0 +1,73 @@
+<!--pages/servicePages//seekWork/seekWork.wxml-->
+<view class="sticky-nav">
+	<search-part></search-part>
+	<van-dropdown-menu  >
+		<block wx:for="{{navTit}}" wx:key="id">
+			<van-dropdown-item  id="{{item.type == 'areaList'? 'item_area' : 'item_' + index}}" title="{{item.title}}" bind:open="openHandle" bind:close="closeHandle">
+				<block wx:if="{{item.type == 'areaList'}}">
+					<van-area area-list="{{ item.option }}" id="area" columns-num="{{ 3 }}" bind:confirm="selectAreaHandle" bind:cancel="cancleAreaHandle" cancel-button-text="重置" />
+				</block>
+				<block wx:else>
+					<block wx:if="{{item.type == 'treeSelect'}}">
+						<scroll-view class="scroll-600h" scroll-y="true">
+							<van-tree-select items="{{ item.option }}" main-active-index="{{ mainActiveIndex }}" active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem" data-navIndex="{{index}}" />
+						</scroll-view>
+					</block>
+					<block wx:elif="{{item.type == 'checkBox'}}">
+						<scroll-view class="scroll-600h" scroll-y="true">
+							<van-checkbox-group bind:change="checkboxChange" data-navIndex="{{index}}" value="{{ item.result }}">
+								<van-cell-group>
+									<van-cell wx:for="{{item.option}}" wx:for-item="yitem" wx:key="idx" title="{{ yitem.text }}" value-class="value-class" clickable data-index="{{ index }}" bind:click="checkboxToggle">
+										<van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ yitem.text }}" shape="square" checked-color="#e04f4d" />
+									</van-cell>
+								</van-cell-group>
+							</van-checkbox-group>
+						</scroll-view>
+					</block>
+					<view class="btn-box">
+						<van-button type="default" class="flex-1" block data-item="{{index}}" bind:click="cancelfirmBtn">重置
+						</van-button>
+						<van-button type="primary" class="flex-1" block color="#e04f4d" data-item="{{index}}" bind:click="confirmBtn">
+							确认</van-button>
+					</view>
+				</block>
+			</van-dropdown-item>
+		</block>
+	</van-dropdown-menu>
+</view>
+
+<view class="wrap-p-box mt140 {{windowFixed?'fixed-position' : ''}}">
+	<van-empty wx:if="{{isEmpty}}" image="/static/images/empty.png" description="没有数据了" />
+	<view wx:else>
+		<block wx:for="{{itemList}}" wx:key="id">
+			<view class="bg-white mb40  p30">
+				<view class="d-flex jc-between mb20 ai-center">
+					<view class="fs-36 font-bold">{{item.title}}</view>
+					<view class="fs-24 text-gray">{{item.time}}</view>
+				</view>
+				<view class="d-flex jc-between ai-center border-2-bottom">
+					<view>
+						<view class="fs-24 d-flex mb20">
+							<view>
+								<van-icon name="location-o" />{{item.address}}</view>
+							<view class="ml40 iconfont icon-xuelishuiping fs-24">{{item.qualifications}}</view>
+						</view>
+						<view class="mb20 text-red">{{item.price}}</view>
+					</view>
+					<van-button plain type="info" size="small" custom-class="border-r-10"  bind:click="buttonHandle">申请</van-button>
+				</view>
+				<view class="d-flex ai-center" style="padding-top:20rpx">
+					<image src="{{item.pic}}" class="pic-90" />
+					<view class="flex-1 ml20">
+						<view class="fs-30 text-light-gray">{{item.company}}</view>
+						<block wx:for="{{item.tag}}" wx:for-item="yitem" wx:key="idx">
+							<van-button plain type="info" size="mini" color="#e25453" custom-class="border-r-10 text-light-red mr10 mt10">{{yitem}}</van-button>
+							<!-- <view class="tag-btn fs-24 text-light-red ">{{yitem}}</view> -->
+						</block>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>
+<van-divider contentPosition="center" wx:if="{{isComplete}}">没有数据了~~</van-divider>

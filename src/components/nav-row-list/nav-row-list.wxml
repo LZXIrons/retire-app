@@ -1,0 +1,14 @@
+<!-- components/nav-row-list/nav-row-list.wxml -->
+<view class="bg-white border-r-12  over-hide">
+    <van-grid clickable column-num="{{columnNum}}">
+        <!-- <van-grid-item   wx:for="{{ 8 }}" wx:if="{{ !navList.length }}"/> -->
+        <block wx:for="{{ navList }}" wx:for-item="item" wx:key="id">
+            <van-grid-item custom-class="w-{{ 100 / columnNum}}"  use-slot bind:click="toNav" data-url="{{item.url}}" data-text="{{item.text}}" data-isBindevent="{{item.isBindevent}}">
+               <view>
+                    <image  src="{{item.pic}}" style="height:{{item.size}}rpx; width:{{item.size}}rpx;" />
+                    <view class="fs-24 text-light-gray" style="margin-top:10rpx">{{item.text}}</view>
+               </view>
+            </van-grid-item>
+        </block>
+    </van-grid>
+</view>

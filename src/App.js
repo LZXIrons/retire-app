@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { memo, Suspense } from 'react';
+// import { Provider } from 'react-redux';
+import { renderRoutes } from 'react-router-config';
+import { HashRouter } from 'react-router-dom';
+import routes from './router';
+import { BackTop, Skeleton } from 'antd';
+// import store from './store';
 
-function App() {
+export default memo(function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <HashRouter>
+        <Suspense fallback={<Skeleton active />}>
+          {renderRoutes(routes)}
+        </Suspense>
+    </HashRouter>
+  )
+});
 
-export default App;

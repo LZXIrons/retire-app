@@ -1,0 +1,79 @@
+<!--pages/servicePages//workInfo/workInfo.wxml-->
+
+<van-tabs line-width="80" title-active-color="#e25453" bind:change="changeNav" bind:click="clickNav" id="tabs" sticky>
+  <block wx:for="{{navTit}}" wx:key="id">
+    <van-tab title="{{item.title}}" custom-class="wrap-mp20-box">
+      <van-empty wx:if="{{isEmpty}}" image="/static/images/empty.png" description="没有数据了" />
+      <block wx:if="{{navIndex === 0}}">
+        <block wx:for="{{itemList}}" wx:key="id">
+          <view class="bg-white mb40  p30">
+            <view class="d-flex jc-between mb20 ai-center">
+              <view class="fs-36 font-bold">{{item.title}}</view>
+              <view class="fs-24 text-gray">{{item.time}}</view>
+            </view>
+            <view class="d-flex jc-between ai-center border-2-bottom">
+              <view>
+                <view class="fs-24 d-flex mb20">
+                  <view>
+                    <van-icon name="location-o" />{{item.address}}</view>
+                  <view class="ml40 iconfont icon-xuelishuiping fs-24">{{item.qualifications}}</view>
+                </view>
+                <view class="mb20 text-red">{{item.price}}</view>
+              </view>
+              <van-button plain type="info" size="small" custom-class="border-r-10"  bind:click="buttonHandle">申请</van-button>
+            </view>
+            <view class="d-flex ai-center" style="padding-top:20rpx">
+              <image src="{{item.pic}}" class="pic-90" />
+              <view class="flex-1 ml20">
+                <view class="fs-30 text-light-gray">{{item.company}}</view>
+                <block wx:for="{{item.tag}}" wx:for-item="yitem" wx:key="idx">
+                  <van-button plain type="info" size="mini" color="#e25453"
+                    custom-class="border-r-10 text-light-red mr10 mt10">{{yitem}}</van-button>
+                </block>
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+
+      <block wx:else>
+        <view class="wrap-p-box bg-white">
+          <van-empty wx:if="{{isEmpty}}" image="/static/images/empty.png" description="没有数据了" />
+          <view wx:else>
+            <!-- 骨架屏 -->
+            <block wx:for="{{6}}" wx:key="index">
+              <view class="list-180h-item border-2-bottom pt46 mb20" hidden="{{isRender}}">
+                <van-skeleton row="2" />
+              </view>
+            </block>
+            <block wx:for="{{articleList}}" wx:for-item="yitem" wx:for-index="index" wx:key="idx">
+              <view class="list-180h-item border-2-bottom" data-yitem="{{yitem}}" catch:tap="toDetail">
+                <view class="d-flex ai-center h-100">
+                  <view>
+                    <image src="{{baseImgUrl + yitem.imageUrl}}" class="pic-120 mr20" />
+                  </view>
+                  <view>
+                    <view class="fs-26 line-2-hide"> {{yitem.title}}</view>
+                    <view class="mt20 fs-24 text-light-gray d-flex jc-between">
+                      <view>来源：{{yitem.originate}}</view>
+                      <view>时间：{{yitem.articleTime}}</view>
+                    </view>
+                  </view>
+                </view>
+
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </van-tab>
+  </block>
+</van-tabs>
+<van-divider contentPosition="center" wx:if="{{isComplete}}">没有数据了~~</van-divider>
+
+
+<!-- <van-popup show="{{ showPopup }}" position="top" bind:close="closePopup">
+  <van-area area-list="{{ areaList }}" id="area" columns-num="{{ 3 }}" title="区域选择" cancel-button-text="重置"
+    bind:confirm="selectAreaHandle" bind:cancel="cancleAreaHandle" />
+
+</van-popup> -->

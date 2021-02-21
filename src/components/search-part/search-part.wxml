@@ -1,0 +1,5 @@
+<!--components/search-part/search-part.wxml-->
+
+<van-search value="{{ value }}" placeholder="请输入职位关键字，如：销售" use-action-slot bind:change="onChange" bind:search="onSearch">
+    <view slot="action" bind:tap="search">搜索</view>
+</van-search>

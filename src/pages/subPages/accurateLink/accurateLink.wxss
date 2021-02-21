@@ -1,0 +1,5 @@
+/* pages/subPages//accurateLink/accurateLink.wxss */
+.van-dropdown-menu__item{
+  justify-content: flex-start!important;
+  padding-left: 40rpx;
+}

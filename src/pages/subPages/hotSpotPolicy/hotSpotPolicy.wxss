@@ -1,0 +1,38 @@
+/* pages/subPages//hotSpotPolicy/hotSpotPolicy.wxss */
+.van-checkbox{
+    justify-content: flex-end;
+}
+.van-checkbox__icon{
+    border-radius: 6rpx;
+}
+.wrap-mp-box{
+    margin:20rpx 0
+}
+.icon-bot{
+
+   position: absolute!important;
+    top: 28rpx!important;
+    right: 20rpx!important;
+    z-index: 10!important;
+}
+.fixed-nav{
+    position: fixed!important;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.van-dropdown-menu{
+    height: var(--tabs-line-height,44px)!important;
+    font-size: var(--tab-font-size,14px)!important;
+    color: var(--tab-text-color,#646566)!important;
+}
+.special-nav{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    background: #ffffff;
+    color: var(--tab-text-color,#646566);
+    font-size: var(--tab-font-size,14px);
+    line-height: var(--tabs-line-height,44px);
+    box-shadow: none;
+}

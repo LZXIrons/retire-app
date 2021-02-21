@@ -1,0 +1,72 @@
+<!--pages/subPages//smartMatchList/smartMatchList.wxml-->
+<view class="d-flex ai-center bg-white fixed-nav">
+  <view class="special-nav text-red">推荐</view>
+  <view class="flex-1">
+    <van-dropdown-menu>
+      <block wx:for="{{navTit}}" wx:key="id">
+        <van-dropdown-item id="{{item.type == 'areaList'? 'item_area' : 'item_' + index}}" title="{{item.title}}">
+          <block wx:if="{{item.type == 'areaList'}}">
+            <van-area area-list="{{ item.option }}" id="area" columns-num="{{ 3 }}" bind:confirm="selectAreaHandle"
+              bind:cancel="cancleAreaHandle" cancel-button-text="重置" />
+          </block>
+          <block wx:else>
+            <block wx:if="{{item.type == 'treeSelect'}}">
+              <scroll-view class="scroll-600h" scroll-y="true">
+                <van-tree-select items="{{ item.option }}" main-active-index="{{ mainActiveIndex }}"
+                  active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem"
+                  data-navIndex="{{index}}" />
+              </scroll-view>
+            </block>
+            <block wx:elif="{{item.type == 'checkBox'}}">
+              <scroll-view class="scroll-600h" scroll-y="true">
+                <van-checkbox-group bind:change="checkboxChange" data-navIndex="{{index}}" value="{{ item.result }}">
+                  <van-cell-group>
+                    <van-cell wx:for="{{item.option}}" wx:for-item="yitem" wx:key="idx" title="{{ yitem.text }}"
+                      value-class="value-class" clickable data-index="{{ index }}" bind:click="checkboxToggle">
+                      <van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ yitem.text }}"
+                        shape="square" checked-color="#e04f4d" />
+                    </van-cell>
+                  </van-cell-group>
+                </van-checkbox-group>
+              </scroll-view>
+            </block>
+            <view class="btn-box">
+              <van-button type="default" class="flex-1" block data-item="{{index}}" bind:click="cancelfirmBtn">重置
+              </van-button>
+              <van-button type="primary" class="flex-1" block color="#e04f4d" data-item="{{index}}"
+                bind:click="confirmBtn">确认</van-button>
+            </view>
+          </block>
+        </van-dropdown-item>
+      </block>
+    </van-dropdown-menu>
+  </view>
+</view>
+
+<view class="wrap-p-box bg-white mt120">
+  <van-empty wx:if="{{isEmpty}}" image="/static/images/empty.png" description="没有数据了" />
+  <view wx:else>
+    <!-- 骨架屏 -->
+    <block wx:for="{{6}}" wx:key="index">
+      <view class="list-180h-item border-2-bottom pt46 mb20" hidden="{{isRender}}">
+        <van-skeleton row="2" />
+      </view>
+    </block>
+    <block wx:for="{{articleList}}" wx:for-item="yitem" wx:for-index="index" wx:key="idx">
+      <view class="list-180h-item border-2-bottom" data-yitem="{{yitem}}" catch:tap="toDetail">
+        <view class="d-flex ai-center h-100">
+          <view><image src="{{item.pic}}" class="pic-120 mr20 bg-red" /></view>
+          <view>
+            <view class="fs-26 line-2-hide"> {{yitem.title}}</view>
+            <view class="mt20 fs-24 text-light-gray d-flex jc-between">
+              <view>来源：{{yitem.originate}}</view>
+              <view>时间：{{yitem.articleTime}}</view>
+            </view>
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </view>
+</view>
+<van-divider contentPosition="center" wx:if="{{isComplete}}">没有数据了~~</van-divider>

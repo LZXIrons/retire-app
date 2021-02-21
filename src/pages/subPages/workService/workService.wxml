@@ -1,0 +1,2 @@
+<!--pages/subPages//workService/workService.wxml-->
+<nav-col-list navList="{{navList}}"></nav-col-list>

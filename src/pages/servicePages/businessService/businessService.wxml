@@ -1,0 +1,58 @@
+<!--pages/servicePages//businessService/businessService.wxml-->
+<van-tabs line-width="80" title-active-color="#e25453" bind:change="changeNav" bind:click="clickNav" id="tabs" sticky>
+  <block wx:for="{{navTit}}" wx:key="id">
+    <van-tab title="{{item.title}}" custom-class="wrap-mp20-box fs-26">
+      <van-empty wx:if="{{isEmpty}}" image="/static/images/empty.png" description="没有数据了" />
+      <block wx:if="{{navIndex === 0}}">
+        <view class="list-item-wrap">
+          <view class="list-item">
+            <view class="fs-30">广州某电脑公司</view>
+            <view class="fs-26 text-light-gray">
+              <view>
+                <van-icon name="location-o" custom-class="mr10"/>广东省广州市天河区珠江新城利华路16号
+              </view>
+              <view>
+                <van-icon name="phone-o" custom-class="mr10"/>020-38923892
+              </view>
+            </view>
+          </view>
+          <van-button plain type="info" size="small" custom-class="border-r-10"  bind:click="buttonHandle">申请</van-button>
+        </view>
+        <view class="list-item-wrap">
+          <view class="list-item">
+            <view class="fs-30">广州某电脑公司</view>
+            <view class="fs-26 text-light-gray">
+              <view>
+                <van-icon name="location-o" custom-class="mr10"/>广东省广州市天河区珠江新城利华路16号
+              </view>
+              <view>
+                <van-icon name="phone-o" custom-class="mr10"/>020-38923892
+              </view>
+            </view>
+          </view>
+          <van-button plain type="info" size="small" custom-class="border-r-10"  bind:click="buttonHandle">申请</van-button>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="wrap-p-box fs-26"  bind:tap="buttonHandle">
+          <view class="d-flex jc-between ai-center border-2-bottom" style="height:140rpx">
+            <view>财税申报</view>
+            <van-icon name="arrow" color="#e25453"/>
+          </view>
+          <view class="d-flex jc-between ai-center border-2-bottom" style="height:140rpx">
+            <view>财税代理</view>
+            <van-icon name="arrow" color="#e25453"/>
+          </view>
+          <view class="d-flex jc-between ai-center border-2-bottom" style="height:140rpx">
+            <view>知识产权</view>
+            <van-icon name="arrow" color="#e25453"/>
+          </view>
+          <view class="fixed-bg-color"></view>
+        </view>
+      </block>
+    </van-tab>
+  </block>
+</van-tabs>
+<van-divider contentPosition="center" wx:if="{{isComplete}}">没有数据了~~</van-divider>
+
+

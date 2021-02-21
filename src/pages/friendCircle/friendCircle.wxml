@@ -1,0 +1,32 @@
+<!-- pages/friendCircle/friendCircle.wxml -->
+<view class="header-box bg-red">
+    <header-top></header-top>
+  </view>
+<view class="wrap-p-box">
+    <view class="header text-light-gray mb20">
+        <view class="mb20">88届战友</view>
+        <view class="text-center">共有66位战友入驻</view>
+    </view>
+</view>
+<van-row gutter="20" custom-class="text-center text-gray pb20 border-2-bottom">
+    <van-col span="8">姓名</van-col>
+    <van-col span="8">手机</van-col>
+    <van-col span="8">加入时间</van-col>
+</van-row>
+<view class="wrap-p-box text-center text-gray bg-white mt40">
+    <van-row gutter="20" custom-class="list-140h-item">
+        <van-col span="8">黄年</van-col>
+        <van-col span="8">18620840656</van-col>
+        <van-col span="8">2021.01.30</van-col>
+    </van-row>
+    <van-row gutter="20" custom-class="list-140h-item">
+        <van-col span="8">黄年</van-col>
+        <van-col span="8">18620840656</van-col>
+        <van-col span="8">2021.01.30</van-col>
+    </van-row>
+    <van-row gutter="20" custom-class="list-140h-item">
+        <van-col span="8">黄年</van-col>
+        <van-col span="8">18620840656</van-col>
+        <van-col span="8">2021.01.30</van-col>
+    </van-row>
+</view>

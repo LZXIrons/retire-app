@@ -1,0 +1,22 @@
+<!--pages/model/model.wxml-->
+<view class="service-page">
+    <view class="header-box bg-red">
+        <header-top></header-top>
+    </view>
+    <view class="wrap-mp-box">
+        <view class="d-flex ai-center mb28">
+            <view class="tag-width bg-red-light bg-red-light mr20"></view>
+            <view class="text-gray fs-36 font-bold">就业服务</view>
+        </view>
+        <nav-row-list navList="{{navList_1}}"></nav-row-list>
+    </view>
+    <view class="wrap-mp-box">
+        <view class="d-flex ai-center mb28">
+            <view class="tag-width bg-red-light mr20"></view>
+            <view class="text-gray fs-36 font-bold">创业服务</view>
+        </view>
+        <nav-row-list navList="{{navList_2}}"></nav-row-list>
+    </view>
+    <!-- 底部占位符 -->
+    <view style="height:100rpx"></view>
+</view>

@@ -1,0 +1,10 @@
+/* pages/friendCircle/friendCircle.wxss */
+.header{
+    font-size: 28rpx;
+    padding: 40rpx 20rpx;
+    height: 180rpx;
+    background-color: #ffffff;
+}
+.list-140h-item{
+    line-height: 140rpx;
+}

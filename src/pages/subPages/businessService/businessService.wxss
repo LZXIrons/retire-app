@@ -1,0 +1,4 @@
+/* pages/subPages//businessService/businessService.wxss */
+page{
+  background-color: #ffffff;
+}

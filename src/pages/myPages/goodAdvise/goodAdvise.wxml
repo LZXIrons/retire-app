@@ -1,0 +1,41 @@
+<!--pages/myPages//goodAdvise/goodAdvise.wxml-->
+<view class="mt40"></view>
+<view class="wrap-p-box  bg-white border-2-bottom">
+  <view class="list-item text-gray">
+    <view class="text-light-gray mb10">
+      2020-11-03 10:30
+    </view>
+    <view>
+      广州市XX有限公司：您的建议非常有建设性，我们会立马针对这方面做出调整，感谢您的建议@我
+    </view>
+    <view class="ml40">
+      我：各个部门都要有标准的工作流程，各个岗位职责落实到人，合理且固定，这样才能有效的提高工作效率，做到各方面有专职人员负责，各部门之间也要密切配合，不在部门之间产生脱节现象。@广州市XX有限公司
+    </view>
+  </view>
+</view>
+<view class="wrap-p-box bg-white border-2-bottom">
+  <view class="list-item text-gray">
+    <view class="text-light-gray mb10">
+      2020-11-03 10:30
+    </view>
+    <view>
+      广州市XX有限公司：您的建议非常有建设性，我们会立马针对这方面做出调整，感谢您的建议@我
+    </view>
+    <view class="ml40">
+      我：各个部门都要有标准的工作流程，各个岗位职责落实到人，合理且固定，这样才能有效的提高工作效率，做到各方面有专职人员负责，各部门之间也要密切配合，不在部门之间产生脱节现象。@广州市XX有限公司
+    </view>
+  </view>
+</view>
+<view class="wrap-p-box bg-white border-2-bottom">
+  <view class="list-item text-gray">
+    <view class="text-light-gray mb10">
+      2020-11-03 10:30
+    </view>
+    <view>
+      广州市XX有限公司：您的建议非常有建设性，我们会立马针对这方面做出调整，感谢您的建议@我
+    </view>
+    <view class="ml40">
+      我：各个部门都要有标准的工作流程，各个岗位职责落实到人，合理且固定，这样才能有效的提高工作效率，做到各方面有专职人员负责，各部门之间也要密切配合，不在部门之间产生脱节现象。@广州市XX有限公司
+    </view>
+  </view>
+</view>

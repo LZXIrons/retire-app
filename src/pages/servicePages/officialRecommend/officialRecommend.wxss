@@ -1,0 +1,14 @@
+/* pages/servicePages//officialRecommend/officialRecommend.wxss */
+.list-item{
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  line-height: 48rpx;
+}
+.van-cell__value {
+  text-align: right!important;
+}
+.value-class {
+  flex: none !important;
+}
